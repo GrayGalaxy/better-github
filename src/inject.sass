@@ -1,0 +1,14 @@
+.dynamic_scroll
+	$padding: 30px 0
+	position: sticky
+	top: var(--offset, 0)
+	max-height: 100vh
+	margin: -$padding
+	padding: $padding
+	overflow: scroll
+	z-index: 30
+	&::-webkit-scrollbar
+		display: none
+
+.page-profile .dynamic_scroll
+	top: 2rem

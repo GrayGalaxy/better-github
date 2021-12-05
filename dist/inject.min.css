@@ -1,0 +1,1 @@
+.dynamic_scroll{position:-webkit-sticky;position:sticky;top:var(--offset, 0);max-height:100vh;margin:-30px 0;padding:30px 0;overflow:scroll;z-index:30}.dynamic_scroll::-webkit-scrollbar{display:none}.page-profile .dynamic_scroll{top:2rem}
