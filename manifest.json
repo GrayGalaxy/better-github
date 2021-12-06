@@ -1,11 +1,9 @@
 {
 	"name": "__MSG_name__",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"manifest_version": 3,
 	"description": "__MSG_description__",
-	"icons": {
-		"48": "icons/48L.png"
-	},
+	"icons": { "48": "assets/icons/48L.png" },
 	"default_locale": "en",
 	"homepage_url": "https://github.com/",
 	"options_ui": { "page": "src/options.html" },

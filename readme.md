@@ -22,6 +22,9 @@ You can also go through how to install it if you are struggling.
 
 _Note: Some of the features are not available yet_
 
+## Screenshots
+![vscode clone button](../better-github/assets/screenshot/img-1.png)
+
 [&#x21e1; Back to top](#)
 
 <br/><br/>
