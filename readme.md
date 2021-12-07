@@ -14,16 +14,30 @@ You can also go through how to install it if you are struggling.
 
 ## Features
 
+This extension comes with a few features that will enhance your GitHub experience.\
+You can Enable/Disable any feature from the options page.
 - Sticky Sidebar
 - Dynamic scroll on sidebar\
   <small>(like sidebar on Twitter)</small>
+- Contribution grapg color themes
 - Material Icon theme for folders
+- Modify Repo Menu to your liking
 - Open with VS Code Button
 
 _Note: Some of the features are not available yet_
 
 ## Screenshots
-![vscode clone button](../better-github/assets/screenshot/img-1.png)
+![vscode clone button](./assets/screenshot/img-1.png)
+![chrome options](./assets/screenshot/img-2.png)
+
+## Extension Option
+
+The extension has a beautiful Options UI. It helps to manages all the functions as needed.\
+Tou can enable or disable any option you need.\
+To open the options pannel, follow these steps
+- **Right click** on the Extension Icon
+- Click **Extension Option**
+- Choose your desired Features
 
 [&#x21e1; Back to top](#)
 

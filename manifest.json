@@ -6,13 +6,13 @@
 	"icons": { "48": "assets/icons/48L.png" },
 	"default_locale": "en",
 	"homepage_url": "https://github.com/",
-	"options_ui": { "page": "src/options.html" },
+	"options_ui": { "open_in_new": true, "page": "chrome/options.html" },
 	"content_scripts": [
 		{
 			"matches": ["https://github.com/*"],
-			"css": ["dist/inject.min.css"],
-			"js": ["dist/jquery.min.js", "src/inject.js"],
-			"run_at": "document_end"
+			"css": ["assets/inject.min.css"],
+			"run_at": "document_end",
+			"js": ["assets/jquery.min.js", "src/_repo_modal.js", "src/_graph.js", "src/inject.js"]
 		}
 	],
 	"permissions": ["storage"]
