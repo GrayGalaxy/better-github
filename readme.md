@@ -19,7 +19,7 @@ You can Enable/Disable any feature from the options page.
 - Sticky Sidebar
 - Dynamic scroll on sidebar\
   <small>(like sidebar on Twitter)</small>
-- Contribution grapg color themes
+- Contribution graph color themes
 - Material Icon theme for folders
 - Modify Repo Menu to your liking
 - Open with VS Code Button

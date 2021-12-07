@@ -1,6 +1,6 @@
 {
 	"name": "__MSG_name__",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"manifest_version": 3,
 	"description": "__MSG_description__",
 	"icons": { "48": "assets/icons/48L.png" },
@@ -12,8 +12,16 @@
 			"matches": ["https://github.com/*"],
 			"css": ["assets/inject.min.css"],
 			"run_at": "document_end",
-			"js": ["assets/jquery.min.js", "src/_repo_modal.js", "src/_graph.js", "src/inject.js"]
+			"js": [
+				"assets/jquery.min.js",
+				"assets/icon_map.min.js",
+				"src/_repo_modal.js",
+				"src/_icons.js",
+				"src/_graph.js",
+				"src/inject.js"
+			]
 		}
 	],
-	"permissions": ["storage"]
+	"permissions": ["storage"],
+	"web_accessible_resources": [{ "resources": ["*.svg"], "matches": ["https://github.com/*"] }]
 }

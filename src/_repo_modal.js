@@ -28,7 +28,7 @@ const modify_repo_modal = async () => {
 		{ name: 'SSH', href: `vscode://vscode.git/clone?url=${link[1]}` },
 		{ name: 'HTTPS', href: `vscode://vscode.git/clone?url=${link[0]}` },
 	]
-	chrome.storage.sync.get({ vsc_insider: false }, (i) => {
+	chrome.storage.sync.get(['vsc_insider'], (i) => {
 		if (i.vsc_insider) {
 			let data = JSON.stringify(vsc_buttons).replace(/(vscode|remotehub)(:?)/g, '$1-insiders$2')
 			vsc_buttons = JSON.parse(data)
@@ -38,7 +38,7 @@ const modify_repo_modal = async () => {
 		})
 		modal.find('.Box-row:first-of-type').after(box)
 	})
-	chrome.storage.sync.get({ visual_studio: true }, (i) => {
+	chrome.storage.sync.get(['visual_studio'], (i) => {
 		if (!i.visual_studio) modal.find('[data-open-app="visual-studio"]').parent().remove()
 	})
 }
