@@ -2,7 +2,7 @@
 const elements = [
 	{ id: 'visual_studio', text: 'Visual Studio', state: true },
 	{ id: 'vsc_insider', text: 'VS Code Insider', state: false },
-	{ id: 'dynamic_scroll', text: 'Dynamic Scrill', state: false },
+	{ id: 'dynamic_scroll', text: 'Dynamic Scroll', state: false },
 	{ id: 'material_icons', text: 'Material Icons', state: false },
 ]
 const colors = {

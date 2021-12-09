@@ -1,0 +1,30 @@
+name: Craete New Release
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Get Version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+            path: 'manifest.json'
+            prop_path: 'version'
+
+      - name: Create Archive
+        id: create_archive
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          filename: release.zip
+          exclusions: '*.git/* *.sass *.scss *.vscode/ *.github/ *.md'
+
+      - name: Upload Release
+        uses: ncipollo/release-action@main
+        with:
+          artifacts: "release.zip"
+          tag: 'v${{steps.version.outputs.prop}}'
+          bodyFile: 'changelog.md'
+          token: ${{ secrets.GITHUB_TOKEN }}

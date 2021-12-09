@@ -13,7 +13,7 @@ const dynamic_sidebar = async () => {
 	$(document).on('scroll', () => {
 		let b = window.scrollY
 		let diff = b - a
-		sidebar[0].scrollTop += diff * 0.65
+		sidebar[0].scrollTop += diff * 0.5
 		a = b
 	})
 }
@@ -28,7 +28,7 @@ $(document).ready(() => {
 	console.log('plugin successfully initiated')
 	init_plugin()
 
-	setTimeout(replace_icons, 250)
+	setInterval(material_icons, 250)
 
 	new MutationObserver((event) => {
 		event.forEach((e) => {

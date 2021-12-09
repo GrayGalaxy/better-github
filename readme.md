@@ -2,15 +2,13 @@
 
 ![][sh_gh_stars] ![][sh_version] [![][sh_downloads]][release]
 
-Simple and effective extension to stylise your Github UI for a better experience.
+Make the GitHub UI better and more useful.
+
+This extension combines features from popular extensions for GitHub in a single package.
 
 Give it a star if you love the extension.
 
 You can download the extension form following [link][release].
-
-<small>
-You can also go through how to install it if you are struggling.
-</small>
 
 ## Features
 
@@ -21,7 +19,6 @@ You can Enable/Disable any feature from the options page.
   <small>(like sidebar on Twitter)</small>
 - Contribution graph color themes
 - Material Icon theme for folders
-- Modify Repo Menu to your liking
 - Open with VS Code Button
 
 _Note: Some of the features are not available yet_
@@ -32,10 +29,10 @@ _Note: Some of the features are not available yet_
 
 ## Extension Option
 
-The extension has a beautiful Options UI. It helps to manages all the functions as needed.\
-Tou can enable or disable any option you need.\
-To open the options pannel, follow these steps
-- **Right click** on the Extension Icon
+The extension has a beautiful Options UI. It helps to manage all the functions as needed.\
+You can enable or disable any option you need.\
+To open the options, follow these steps
+- **Right-click** on the Extension Icon
 - Click **Extension Option**
 - Choose your desired Features
 

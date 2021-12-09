@@ -1,14 +1,12 @@
-const replace_icons = async () => {
+const material_icons = async () => {
 	const icon_class = 'bgh_icon',
 		container = $('.js-navigation-container'),
 		list = container?.find('.js-navigation-item[role="row"]')
 
 	if (list?.length < 1 || $(`.${icon_class}`).length) return
-
 	let { material_icons: enabled } = await new Promise((res) => {
 		chrome.storage.sync.get(['material_icons'], res)
 	})
-	console.log(enabled)
 	if (!enabled) return
 
 	list.each((i, item) => {
