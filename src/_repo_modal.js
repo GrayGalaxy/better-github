@@ -24,9 +24,7 @@ const modify_repo_modal = async () => {
 		modal.find('input[value^="https"]').val().replace(/\.git$/, ''),
 	]
 
-	const { vsc_insider, visual_studio } = await new Promise((res) => {
-		chrome.storage.sync.get(['vsc_insider', 'visual_studio'], res)
-	})
+	const { vsc_insider, visual_studio } = await storage.get('vsc_insider', 'visual_studio')
 
 	let u1 = vsc_insider ? 'vscode-insiders' : 'vscode',
 		u2 = vsc_insider ? 'remotehub-insiders' : 'remotehub'

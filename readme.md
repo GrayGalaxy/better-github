@@ -19,12 +19,14 @@ You can Enable/Disable any feature from the options page.
   <small>(like sidebar on Twitter)</small>
 - Contribution graph color themes
 - Material Icon theme for folders
+- NPM Package details panel
 - Open with VS Code Button
 
 _Note: Some of the features are not available yet_
 
 ## Screenshots
 ![vscode clone button](./assets/screenshot/img-1.png)
+![npm panel](./assets/screenshot/img-3.png)
 ![chrome options](./assets/screenshot/img-2.png)
 
 ## Extension Option

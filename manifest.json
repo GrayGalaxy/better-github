@@ -1,12 +1,12 @@
 {
 	"name": "__MSG_name__",
-	"version": "0.2.5",
+	"version": "0.2.6",
 	"manifest_version": 3,
 	"description": "__MSG_description__",
 	"icons": { "48": "assets/icons/48L.png" },
 	"default_locale": "en",
 	"homepage_url": "https://github.com/",
-	"options_ui": { "open_in_new": true, "page": "chrome/options.html" },
+	"options_ui": { "open_in_tab": false, "page": "chrome/options.html" },
 	"content_scripts": [
 		{
 			"matches": ["https://github.com/*"],
@@ -14,8 +14,10 @@
 			"run_at": "document_end",
 			"js": [
 				"assets/jquery.min.js",
-				"assets/icon_map.min.js",
+				"assets/chart.min.js",
+				"assets/utils.js",
 				"src/_repo_modal.js",
+				"src/_package.js",
 				"src/_icons.js",
 				"src/_graph.js",
 				"src/inject.js"

@@ -2,13 +2,12 @@ const material_icons = async () => {
 	const icon_class = 'bgh_icon',
 		container = $('.js-navigation-container'),
 		list = container?.find('.js-navigation-item[role="row"]')
-
+	// check if icons are already loaded
 	if (list?.length < 1 || $(`.${icon_class}`).length) return
-	let { material_icons: enabled } = await new Promise((res) => {
-		chrome.storage.sync.get(['material_icons'], res)
-	})
+	// check if enabled
+	const { material_icons: enabled } = await storage.get('material_icons')
 	if (!enabled) return
-
+	// load icons
 	list.each((i, item) => {
 		const $item = $(item)
 		const svg = $item.find('svg')
@@ -36,6 +35,7 @@ const material_icons = async () => {
 	})
 }
 
+// get icon name
 const get_icon_name = ({ name, name_l, ext, dir, submodule }) => {
 	if (submodule) return 'f_git'
 	if (!dir && icon_map.file[name]) return icon_map.file[name]

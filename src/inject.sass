@@ -7,16 +7,28 @@
 		margin: -$p
 		padding: $p
 		overflow: scroll
-		z-index: 30
+		.page-profile &
+			z-index: 10
 		&::-webkit-scrollbar
 			display: none
 	.page-profile .dynamic_scroll
 		top: 2rem
 
+.js-position-sticky
+	z-index: auto !important
+
+.BtrGH_npm
+	summary svg
+		fill: var(--color-btn-text)
+	.npm_text
+		margin-bottom: .5rem
+
+//R
+
+
 .BtrGH_btn
 	position: relative
-	padding: 3px 12px
-	font-size: 12px
+	padding: 3px 10px
 	color: var(--color-fg-default)
 	background-color: var(--color-btn-bg)
 	border: 1px solid var(--color-btn-border)

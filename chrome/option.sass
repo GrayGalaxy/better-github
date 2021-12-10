@@ -18,11 +18,14 @@ body
 	margin: 0
 	font-size: .85rem
 	padding: 1.5rem
-	-webkit-user-select: none
-	-moz-user-select: none
-	-ms-user-select: none
 	user-select: none
 	height: 100%
+
+	@media (prefers-color-scheme: dark)
+		--bg: #333
+		--tx: #ccc
+		--ch_f: #838383
+		--br: #fff2
 
 h2
 	font-size: 1rem
@@ -32,6 +35,25 @@ h2
 	&:not(:first-of-type)
 		border-top: 1px solid var(--br)
 		padding-top: 1rem
+	&.single-line
+		display: flex
+		align-items: center
+		button
+			margin-left: auto
+
+button
+	background: transparent
+	border: 1px solid var(--ch_f)
+	border-radius: 4px
+	display: flex
+	align-items: center
+	color: inherit
+	padding: .25rem .5rem
+	gap: .5rem
+	cursor: pointer
+	svg
+		fill: currentcolor
+
 .sinple-check
 	display: flex
 	flex-direction: row
@@ -69,13 +91,6 @@ h2
 		background: var(--ch_f)
 		+ .knob
 			opacity: 1
-
-@media (prefers-color-scheme: dark)
-	body
-		--bg: #333
-		--tx: #ccc
-		--ch_f: #BCBCBC
-		--br: #fff2
 
 .color-selector
 	display: grid
