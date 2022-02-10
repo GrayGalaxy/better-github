@@ -1,0 +1,17 @@
+{
+	"name": "Better Github ᴺᴱᵂ",
+	"version": "0.0.0",
+	"manifest_version": 2,
+	"description": "Github With Better UI and Extra features",
+	"icons": { "48": "icon_dark.png" },
+	"homepage_url": "https://github.com/graygalaxy/better-github",
+	"options_ui": { "open_in_tab": false, "page": "options.html" },
+	"content_scripts": [{
+		"matches": ["https://github.com/*", "https://gist.github.com/*"],
+		"css": ["inject.css"],
+		"js": ["browser-polyfill.js", "inject.js"]
+	}],
+	"browser_action": { "default_icon": "icon_dark.png" },
+	"background": { "scripts": ["browser-polyfill.js", "background.js"] },
+	"permissions": ["<all_urls>", "storage"]
+}
