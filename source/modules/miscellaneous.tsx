@@ -1,13 +1,10 @@
-import { observe } from 'selector-observer'
+import ready from 'element-ready'
 import { storage } from '../utils'
 
 const vs_menu = await storage.get('vs_menu')
 
-// Removes 'Open in Visual Studio' menu item from the repository list
-if (!vs_menu)
-	observe('[data-target="get-repo.modal"] [data-open-app="visual-studio"]', {
-		add(el) {
-			const parent = el.parentElement
-			parent?.remove()
-		},
+if (!vs_menu) {
+	ready('[data-target="get-repo.modal"] [data-open-app="visual-studio"]').then((el) => {
+		el?.parentElement!.setAttribute('hidden', 'true')
 	})
+}

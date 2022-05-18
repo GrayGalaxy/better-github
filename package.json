@@ -12,9 +12,6 @@
 		"watch": "webpack --mode=development --watch && tsc --watch --preserveWatchOutput",
 		"build": "webpack --mode=production && tsc"
 	},
-	"engines": {
-		"node": ">= 16"
-	},
 	"devDependencies": {
 		"@types/node-sass": "^4.11.2",
 		"@types/webextension-polyfill": "^0.8.2",
@@ -26,6 +23,7 @@
 		"webpack-cli": "^4.9.1"
 	},
 	"dependencies": {
+		"element-ready": "^6.2.0",
 		"jsx-dom": "^8.0.1-beta.4",
 		"select-dom": "^7.1.1",
 		"selector-observer": "^2.1.6",

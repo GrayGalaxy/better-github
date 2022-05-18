@@ -1,9 +1,31 @@
-export const features = [
-	{ state: 0, id: 'vs_menu', text: 'Visual Studio' },
-	{ state: 1, id: 'vsc_clone_btn', text: 'VS Code Clone Button' },
-	{ state: 0, id: 'vsc_insider', text: 'VS Code Insider' },
-	{ state: 1, id: 'simple_action_btn', text: 'Simple Actions Button' },
+import { IconName } from '../utils'
+
+export type FeaturesID =
+	| 'vs_menu'
+	| 'vsc_clone_btn'
+	| 'vsc_insider'
+	| 'simple_action_btn'
+	| 'gh_tab_size'
+	| 'graph_theme'
+
+export interface Features {
+	state: boolean | number | string
+	icon?: IconName
+	id: FeaturesID
+	type: 'check' | 'radio' | 'text' | 'number' | string
+	text: string
+	props?: any
+}
+
+// prettier-ignore
+export const features: Features[] = [
+	{ state: false, type: 'check', id: 'vs_menu', text: 'Visual Studio' },
+	{ state: true, type: 'check', id: 'vsc_clone_btn', text: 'VS Code Clone Button' },
+	{ state: false, type: 'check', id: 'vsc_insider', text: 'VS Code Insider' },
+	{ state: true, type: 'check', id: 'simple_action_btn', text: 'Simple Actions Button' },
+	{ state: 2, type: 'number', id: 'gh_tab_size', text: 'Tab Size in GitHub', props: { min: 1, max: 8, step: 1 }},
 ]
+
 export const color_map = [
 	['#9be9a8', '#40c463', '#30a14e', '#216e39'],
 	['#bbdefb', '#64b5f6', '#1e88e5', '#0d47a1'],
