@@ -1,0 +1,18 @@
+/node_modules
+/build
+
+# package-lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# debug
+*-debug.log*
+*-error.log*
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

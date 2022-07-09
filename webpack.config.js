@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { createRequire } from 'node:module'
-import { renderSync } from 'node-sass'
+import SASS from 'sass'
 import CopyPlugin from 'copy-webpack-plugin'
 const { resolve: resolvePackage } = createRequire(import.meta.url)
 
@@ -23,8 +23,8 @@ const config = (env, argv) => {
 						from: 'source/sass/*',
 						to: '[name].css',
 						transform(c, file) {
-							const opt = { file, outputStyle: 'compressed' }
-							return renderSync(opt).css.toString()
+							const buffer = SASS.compile(file, { style: 'compressed' })
+							return buffer.css.toString()
 						},
 					},
 				],

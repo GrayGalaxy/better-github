@@ -4,16 +4,23 @@ env:
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: Version TAG
-        required: true
-        type: string
       prerelease:
         description: Pre-release
         required: false
         type: boolean
 jobs:
+  Version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.daily-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Creating release tag
+        uses: fregante/daily-version-action@v1
+        id: daily-version
   Build:
+    needs: Version
+    if: needs.Version.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,23 +28,23 @@ jobs:
         with:
           node-version: 16
       - name: Installing Dependencies
-        run: yarn install
+        run: pnpm install
       - name: Building Package
         run: yarn build
       - name: Updating extension version
-        run: npx dot-json@1 $DIR/manifest.json version ${{ github.event.inputs.version }}
+        run: npx dot-json@1 $DIR/manifest.json version ${{needs.Version.outputs.version }}
       - name: Creating Zip
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
           directory: ${{ env.DIR }}
           filename: 'release.zip'
+          exclusions: '*LICENSE.txt'
       - name: Uploading Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: '${{ env.DIR }}/release.zip'
           artifactContentType: 'zip'
-          body: ${{ github.event.inputs.message || '' }}
           prerelease: ${{ github.event.inputs.prerelease }}
-          tag: 'v${{ github.event.inputs.versio }}'
+          tag: 'v${{ needs.Version.outputs.version }}'
           token: ${{ secrets.GITHUB_TOKEN }}
