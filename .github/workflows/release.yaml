@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 16
       - name: Installing Dependencies
-        run: pnpm install
+        run: yarn install
       - name: Building Package
         run: yarn build
       - name: Updating extension version
